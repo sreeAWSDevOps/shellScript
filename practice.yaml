@@ -1,0 +1,11 @@
+- name: Install ngnix
+  hosts: ngnix
+  tasks: 
+  - name: install ngnix
+    ansible.bulitin.yum:
+      name: ngnix
+      state: installed  
+  - name: start ngnix
+    ansible.bulitin.service:
+      name: ngnix
+      state: started      
