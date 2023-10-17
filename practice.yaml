@@ -1,11 +1,12 @@
-- name: Install ngnix
+- name: Install and run nginx
   hosts: ngnix
+  become: yes
   tasks: 
-  - name: install ngnix
+  - name: Install nginx
     ansible.bulitin.yum:
-      name: ngnix
+      name: nginx
       state: installed  
-  - name: start ngnix
+  - name: start nginx
     ansible.bulitin.service:
-      name: ngnix
+      name: nginx
       state: started      
